@@ -4,20 +4,20 @@ This macro takes a Freemarker model and prints it out as JSON. Output is compres
 
 ## Usage
 
-```html
+```
 <#import "json.ftl" as json>
 
 <@json.stringify your_model_here />
 ```
 
-## Options
+## Escaping
 
-You can pass a second argument to `<@json.stringify>` if you want the JSON escaped. The options are `"html"` and `"js_string"`.
+Escape the generated JSON with the second argument to `<@json.stringify>`. The options are `html` and `js_string`.
 
 ```html
 <meta name="extraData" content='<@json.stringify extra_data "html" />' />
 
-<script type="javascript">
+<script type="text/javascript">
 
 var myExtraJSON = '<@json.stringify extra_data "js_string" />';
 
